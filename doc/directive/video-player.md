@@ -1,7 +1,7 @@
 
 
 # video_player
-`import "github.com/dueros/bot-sdk-go/bot/directive/video_player"`
+`import "github.com/johnnyeven/bot-sdk-go/bot/directive/video_player"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -28,7 +28,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[const.go](/src/github.com/dueros/bot-sdk-go/bot/directive/video_player/const.go) [play.go](/src/github.com/dueros/bot-sdk-go/bot/directive/video_player/play.go) [stop.go](/src/github.com/dueros/bot-sdk-go/bot/directive/video_player/stop.go) 
+[const.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/video_player/const.go) [play.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/video_player/play.go) [stop.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/video_player/stop.go) 
 
 
 ## <a name="pkg-constants">Constants</a>

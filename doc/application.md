@@ -1,7 +1,7 @@
 
 
 # bot
-`import "github.com/dueros/bot-sdk-go/bot"`
+`import "github.com/johnnyeven/bot-sdk-go/bot"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -19,7 +19,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[application.go](/src/github.com/dueros/bot-sdk-go/bot/application.go) [audio_player.go](/src/github.com/dueros/bot-sdk-go/bot/audio_player.go) [bot.go](/src/github.com/dueros/bot-sdk-go/bot/bot.go) [event_handler.go](/src/github.com/dueros/bot-sdk-go/bot/event_handler.go) [video_player.go](/src/github.com/dueros/bot-sdk-go/bot/video_player.go) 
+[application.go](/src/github.com/johnnyeven/bot-sdk-go/bot/application.go) [audio_player.go](/src/github.com/johnnyeven/bot-sdk-go/bot/audio_player.go) [bot.go](/src/github.com/johnnyeven/bot-sdk-go/bot/bot.go) [event_handler.go](/src/github.com/johnnyeven/bot-sdk-go/bot/event_handler.go) [video_player.go](/src/github.com/johnnyeven/bot-sdk-go/bot/video_player.go) 
 
 
 

@@ -1,7 +1,7 @@
 
 
 # audio_player
-`import "github.com/dueros/bot-sdk-go/bot/directive/audio_player"`
+`import "github.com/johnnyeven/bot-sdk-go/bot/directive/audio_player"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -37,7 +37,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[const.go](/src/github.com/dueros/bot-sdk-go/bot/directive/audio_player/const.go) [play.go](/src/github.com/dueros/bot-sdk-go/bot/directive/audio_player/play.go) [player_info.go](/src/github.com/dueros/bot-sdk-go/bot/directive/audio_player/player_info.go) [stop.go](/src/github.com/dueros/bot-sdk-go/bot/directive/audio_player/stop.go) 
+[const.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/audio_player/const.go) [play.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/audio_player/play.go) [player_info.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/audio_player/player_info.go) [stop.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/audio_player/stop.go) 
 
 
 ## <a name="pkg-constants">Constants</a>

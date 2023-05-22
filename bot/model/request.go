@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/dueros/bot-sdk-go/bot/data"
+	"github.com/johnnyeven/bot-sdk-go/bot/data"
 )
 
 const (

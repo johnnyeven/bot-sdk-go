@@ -1,7 +1,7 @@
 
 
 # card
-`import "github.com/dueros/bot-sdk-go/bot/card"`
+`import "github.com/johnnyeven/bot-sdk-go/bot/card"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -37,7 +37,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[base.go](/src/github.com/dueros/bot-sdk-go/bot/card/base.go) [image.go](/src/github.com/dueros/bot-sdk-go/bot/card/image.go) [link_account.go](/src/github.com/dueros/bot-sdk-go/bot/card/link_account.go) [list.go](/src/github.com/dueros/bot-sdk-go/bot/card/list.go) [standard.go](/src/github.com/dueros/bot-sdk-go/bot/card/standard.go) [text.go](/src/github.com/dueros/bot-sdk-go/bot/card/text.go) 
+[base.go](/src/github.com/johnnyeven/bot-sdk-go/bot/card/base.go) [image.go](/src/github.com/johnnyeven/bot-sdk-go/bot/card/image.go) [link_account.go](/src/github.com/johnnyeven/bot-sdk-go/bot/card/link_account.go) [list.go](/src/github.com/johnnyeven/bot-sdk-go/bot/card/list.go) [standard.go](/src/github.com/johnnyeven/bot-sdk-go/bot/card/standard.go) [text.go](/src/github.com/johnnyeven/bot-sdk-go/bot/card/text.go) 
 
 
 

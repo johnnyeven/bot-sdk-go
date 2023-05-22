@@ -10,10 +10,10 @@ import (
 	"os"
 	"strconv"
 
-	dueros "github.com/dueros/bot-sdk-go/bot"
-	"github.com/dueros/bot-sdk-go/bot/directive/display"
-	"github.com/dueros/bot-sdk-go/bot/directive/display/template"
-	"github.com/dueros/bot-sdk-go/bot/model"
+	dueros "github.com/johnnyeven/bot-sdk-go/bot"
+	"github.com/johnnyeven/bot-sdk-go/bot/directive/display"
+	"github.com/johnnyeven/bot-sdk-go/bot/directive/display/template"
+	"github.com/johnnyeven/bot-sdk-go/bot/model"
 )
 
 var CODE_INIT = false
@@ -122,7 +122,12 @@ func getCity(jsonStr string) string {
 
 func getFlight(date, departure, destination string) *Result {
 	url := "http://sec-m.ctrip.com/restapi/soa2/13516/lowPriceCalendar"
-	req := fmt.Sprintf(`{"head":{},"stype":1,"dcty":"%s","acty":"%s","start":"","end":"%s","flag":1}`, departure, destination, date)
+	req := fmt.Sprintf(
+		`{"head":{},"stype":1,"dcty":"%s","acty":"%s","start":"","end":"%s","flag":1}`,
+		departure,
+		destination,
+		date,
+	)
 	log.Println(req)
 
 	client := &http.Client{}

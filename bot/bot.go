@@ -3,7 +3,7 @@ package bot
 import (
 	"reflect"
 
-	"github.com/dueros/bot-sdk-go/bot/model"
+	"github.com/johnnyeven/bot-sdk-go/bot/model"
 )
 
 // 技能基础类

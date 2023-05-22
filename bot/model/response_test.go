@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/dueros/bot-sdk-go/bot/data"
-	"github.com/dueros/bot-sdk-go/bot/util"
+	"github.com/johnnyeven/bot-sdk-go/bot/data"
+	"github.com/johnnyeven/bot-sdk-go/bot/util"
 	//"log"
 )
 

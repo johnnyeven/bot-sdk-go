@@ -1,7 +1,7 @@
 
 
 # display
-`import "github.com/dueros/bot-sdk-go/bot/directive/display"`
+`import "github.com/johnnyeven/bot-sdk-go/bot/directive/display"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -17,7 +17,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[hint.go](/src/github.com/dueros/bot-sdk-go/bot/directive/display/hint.go) [render_template.go](/src/github.com/dueros/bot-sdk-go/bot/directive/display/render_template.go) 
+[hint.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/display/hint.go) [render_template.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/display/render_template.go) 
 
 
 

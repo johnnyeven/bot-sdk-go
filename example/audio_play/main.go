@@ -1,10 +1,10 @@
 package main
 
 import (
-	dueros "github.com/dueros/bot-sdk-go/bot"
-	"github.com/dueros/bot-sdk-go/bot/card"
-	"github.com/dueros/bot-sdk-go/bot/directive/audio_player"
-	"github.com/dueros/bot-sdk-go/bot/model"
+	dueros "github.com/johnnyeven/bot-sdk-go/bot"
+	"github.com/johnnyeven/bot-sdk-go/bot/card"
+	"github.com/johnnyeven/bot-sdk-go/bot/directive/audio_player"
+	"github.com/johnnyeven/bot-sdk-go/bot/model"
 )
 
 func main() {

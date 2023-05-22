@@ -1,7 +1,7 @@
 package display
 
 import (
-	"github.com/dueros/bot-sdk-go/bot/directive"
+	"github.com/johnnyeven/bot-sdk-go/bot/directive"
 )
 
 type RenderTemplate struct {

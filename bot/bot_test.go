@@ -1,7 +1,7 @@
 package bot
 
 import (
-	"github.com/dueros/bot-sdk-go/bot/util"
+	"github.com/johnnyeven/bot-sdk-go/bot/util"
 	"testing"
 )
 
@@ -12,16 +12,18 @@ func TestAddDefaultEventListener(t *testing.T) {
 	b := NewBot(rawRequest)
 	called := false
 
-	b.AddDefaultEventListener(func(bot *Bot, request interface{}) {
-		called = true
-		bot.Response.HoldOn()
-		ret := bot.Response.GetData()
-		shouldEndSession := ret["shouldEndSession"].(bool)
+	b.AddDefaultEventListener(
+		func(bot *Bot, request interface{}) {
+			called = true
+			bot.Response.HoldOn()
+			ret := bot.Response.GetData()
+			shouldEndSession := ret["shouldEndSession"].(bool)
 
-		if shouldEndSession != false {
-			t.Error("AddDefaultEventListener HoldOn: shouldEndSession is not false")
-		}
-	})
+			if shouldEndSession != false {
+				t.Error("AddDefaultEventListener HoldOn: shouldEndSession is not false")
+			}
+		},
+	)
 
 	b.Run()
 

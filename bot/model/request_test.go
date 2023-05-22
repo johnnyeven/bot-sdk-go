@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/dueros/bot-sdk-go/bot/util"
+	"github.com/johnnyeven/bot-sdk-go/bot/util"
 )
 
 func TestGetUserId(t *testing.T) {

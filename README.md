@@ -16,17 +16,17 @@
 ## 安装、使用BOT SDK进行开发 
 度秘BOT SDK使用执行如下命令进行安装：
 ```shell
-go get github.com/dueros/bot-sdk-go
+go get github.com/johnnyeven/bot-sdk-go
 ```
 
 为了开始使用BOT SDK，你需要先新建一个main文件，比如文件名是main.go。
 
 ```javascript
 import (
-	dueros "github.com/dueros/bot-sdk-go/bot"
-	"github.com/dueros/bot-sdk-go/bot/directive/display"
-	"github.com/dueros/bot-sdk-go/bot/directive/display/template"
-	"github.com/dueros/bot-sdk-go/bot/model"
+	dueros "github.com/johnnyeven/bot-sdk-go/bot"
+	"github.com/johnnyeven/bot-sdk-go/bot/directive/display"
+	"github.com/johnnyeven/bot-sdk-go/bot/directive/display/template"
+	"github.com/johnnyeven/bot-sdk-go/bot/model"
 )
 
 func main() {

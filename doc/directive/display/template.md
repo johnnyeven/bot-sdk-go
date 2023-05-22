@@ -1,7 +1,7 @@
 
 
 # template
-`import "github.com/dueros/bot-sdk-go/bot/directive/display/template"`
+`import "github.com/johnnyeven/bot-sdk-go/bot/directive/display/template"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -55,7 +55,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[base.go](/src/github.com/dueros/bot-sdk-go/bot/directive/display/template/base.go) [body_template1.go](/src/github.com/dueros/bot-sdk-go/bot/directive/display/template/body_template1.go) [body_template2_3_4.go](/src/github.com/dueros/bot-sdk-go/bot/directive/display/template/body_template2_3_4.go) [body_template5.go](/src/github.com/dueros/bot-sdk-go/bot/directive/display/template/body_template5.go) [list.go](/src/github.com/dueros/bot-sdk-go/bot/directive/display/template/list.go) [list_template1_2.go](/src/github.com/dueros/bot-sdk-go/bot/directive/display/template/list_template1_2.go) [text_image.go](/src/github.com/dueros/bot-sdk-go/bot/directive/display/template/text_image.go) 
+[base.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/display/template/base.go) [body_template1.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/display/template/body_template1.go) [body_template2_3_4.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/display/template/body_template2_3_4.go) [body_template5.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/display/template/body_template5.go) [list.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/display/template/list.go) [list_template1_2.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/display/template/list_template1_2.go) [text_image.go](/src/github.com/johnnyeven/bot-sdk-go/bot/directive/display/template/text_image.go) 
 
 
 ## <a name="pkg-constants">Constants</a>

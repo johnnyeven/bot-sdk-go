@@ -1,7 +1,7 @@
 
 
 # model
-`import "github.com/dueros/bot-sdk-go/bot/model"`
+`import "github.com/johnnyeven/bot-sdk-go/bot/model"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -21,7 +21,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[dialog.go](/src/github.com/dueros/bot-sdk-go/bot/model/dialog.go) [intent.go](/src/github.com/dueros/bot-sdk-go/bot/model/intent.go) [request.go](/src/github.com/dueros/bot-sdk-go/bot/model/request.go) [response.go](/src/github.com/dueros/bot-sdk-go/bot/model/response.go) [session.go](/src/github.com/dueros/bot-sdk-go/bot/model/session.go) [ssml_builder.go](/src/github.com/dueros/bot-sdk-go/bot/model/ssml_builder.go) 
+[dialog.go](/src/github.com/johnnyeven/bot-sdk-go/bot/model/dialog.go) [intent.go](/src/github.com/johnnyeven/bot-sdk-go/bot/model/intent.go) [request.go](/src/github.com/johnnyeven/bot-sdk-go/bot/model/request.go) [response.go](/src/github.com/johnnyeven/bot-sdk-go/bot/model/response.go) [session.go](/src/github.com/johnnyeven/bot-sdk-go/bot/model/session.go) [ssml_builder.go](/src/github.com/johnnyeven/bot-sdk-go/bot/model/ssml_builder.go) 
 
 
 
