@@ -14,7 +14,7 @@ func TestOnAudioPlaybackStarted(t *testing.T) {
 	body, _ := util.ReadFileAll("test/audio-player-event.json")
 	rawRequest := string(body)
 
-	bot := NewBot(rawRequest)
+	bot := NewBot()
 
 	bot.OnAudioPlaybackStarted(
 		func(bot *Bot, request *model.AudioPlayerEventRequest) {
@@ -33,5 +33,5 @@ func TestOnAudioPlaybackStarted(t *testing.T) {
 		},
 	)
 
-	bot.Run()
+	bot.Handler(rawRequest)
 }

@@ -9,7 +9,7 @@ func TestAddDefaultEventListener(t *testing.T) {
 	body, _ := util.ReadFileAll("test/audio-player-event.json")
 	rawRequest := string(body)
 
-	b := NewBot(rawRequest)
+	b := NewBot()
 	called := false
 
 	b.AddDefaultEventListener(
@@ -25,7 +25,7 @@ func TestAddDefaultEventListener(t *testing.T) {
 		},
 	)
 
-	b.Run()
+	b.Handler(rawRequest)
 
 	if !called {
 		t.Error("AddDefaultEventListener has not been called")

@@ -13,7 +13,7 @@ func TestOnVideoPlaybackStarted(t *testing.T) {
 	body, _ := util.ReadFileAll("test/video-player-event.json")
 	rawRequest := string(body)
 
-	bot := NewBot(rawRequest)
+	bot := NewBot()
 
 	bot.OnVideoPlaybackStarted(
 		func(bot *Bot, request *model.VideoPlayerEventRequest) {
@@ -24,5 +24,5 @@ func TestOnVideoPlaybackStarted(t *testing.T) {
 		},
 	)
 
-	bot.Run()
+	bot.Handler(rawRequest)
 }
