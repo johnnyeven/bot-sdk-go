@@ -38,50 +38,50 @@ func NewPlayDirective(url string) *PlayDirective {
 	return play
 }
 
-func (this *PlayDirective) SetBehavior(behavior string) *PlayDirective {
+func (d *PlayDirective) SetBehavior(behavior string) *PlayDirective {
 	_, ok := behaviorMap[behavior]
 	if ok {
-		this.PlayBehavior = behavior
+		d.PlayBehavior = behavior
 	}
 
-	return this
+	return d
 }
 
-func (this *PlayDirective) SetToken(token string) *PlayDirective {
-	this.VideoItem.Stream.Token = token
-	return this
+func (d *PlayDirective) SetToken(token string) *PlayDirective {
+	d.VideoItem.Stream.Token = token
+	return d
 }
 
-func (this *PlayDirective) GetToken(token string) string {
-	return this.VideoItem.Stream.Token
+func (d *PlayDirective) GetToken(token string) string {
+	return d.VideoItem.Stream.Token
 }
 
-func (this *PlayDirective) SetUrl(url string) *PlayDirective {
-	this.VideoItem.Stream.Url = url
-	return this
+func (d *PlayDirective) SetUrl(url string) *PlayDirective {
+	d.VideoItem.Stream.Url = url
+	return d
 }
 
-func (this *PlayDirective) SetOffsetInMilliseconds(milliseconds int) *PlayDirective {
-	this.VideoItem.Stream.OffsetInMilliseconds = milliseconds
-	return this
+func (d *PlayDirective) SetOffsetInMilliseconds(milliseconds int) *PlayDirective {
+	d.VideoItem.Stream.OffsetInMilliseconds = milliseconds
+	return d
 }
 
-func (this *PlayDirective) SetExpiryTime(expiryTime string) *PlayDirective {
-	this.VideoItem.Stream.ExpiryTime = expiryTime
-	return this
+func (d *PlayDirective) SetExpiryTime(expiryTime string) *PlayDirective {
+	d.VideoItem.Stream.ExpiryTime = expiryTime
+	return d
 }
 
-func (this *PlayDirective) SetReportDelayInMs(reportDelayInMs int) *PlayDirective {
-	this.VideoItem.Stream.ProgressReport.ProgressReportDelayInMilliseconds = reportDelayInMs
-	return this
+func (d *PlayDirective) SetReportDelayInMs(reportDelayInMs int) *PlayDirective {
+	d.VideoItem.Stream.ProgressReport.ProgressReportDelayInMilliseconds = reportDelayInMs
+	return d
 }
 
-func (this *PlayDirective) SetReportIntervalInMs(reportIntervalInMs int) *PlayDirective {
-	this.VideoItem.Stream.ProgressReport.ProgressReportIntervalInMilliseconds = reportIntervalInMs
-	return this
+func (d *PlayDirective) SetReportIntervalInMs(reportIntervalInMs int) *PlayDirective {
+	d.VideoItem.Stream.ProgressReport.ProgressReportIntervalInMilliseconds = reportIntervalInMs
+	return d
 }
 
-func (this *PlayDirective) SetExpectedPreviousToken(expectedPreviousToken string) *PlayDirective {
-	this.VideoItem.Stream.ExpectedPreviousToken = expectedPreviousToken
-	return this
+func (d *PlayDirective) SetExpectedPreviousToken(expectedPreviousToken string) *PlayDirective {
+	d.VideoItem.Stream.ExpectedPreviousToken = expectedPreviousToken
+	return d
 }

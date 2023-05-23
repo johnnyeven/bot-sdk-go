@@ -20,18 +20,18 @@ func NewSSMLTextBuilder() *SSMLTextBuilder {
 	return &SSMLTextBuilder{bytes.NewBufferString("")}
 }
 
-func (this *SSMLTextBuilder) AppendPlainSpeech(text string) *SSMLTextBuilder {
+func (b *SSMLTextBuilder) AppendPlainSpeech(text string) *SSMLTextBuilder {
 
-	this.buffer.WriteString(text)
+	b.buffer.WriteString(text)
 
-	return this
+	return b
 }
 
-func (this *SSMLTextBuilder) AppendAudio(src string) *SSMLTextBuilder {
+func (b *SSMLTextBuilder) AppendAudio(src string) *SSMLTextBuilder {
 
-	this.buffer.WriteString(fmt.Sprintf("<audio src=\"%s\"></audio>", src))
+	b.buffer.WriteString(fmt.Sprintf("<audio src=\"%s\"></audio>", src))
 
-	return this
+	return b
 }
 
 /*
@@ -76,43 +76,50 @@ func (this *SSMLTextBuilder) AppendSentence(text string) *SSMLTextBuilder {
 }
 */
 
-func (this *SSMLTextBuilder) AppendSilence(time int) *SSMLTextBuilder {
+func (b *SSMLTextBuilder) AppendSilence(time int) *SSMLTextBuilder {
 
-	this.buffer.WriteString(fmt.Sprintf("<silence time=\"%s\"></silence>", time))
+	b.buffer.WriteString(fmt.Sprintf("<silence time=\"%s\"></silence>", time))
 
-	return this
+	return b
 }
 
-func (this *SSMLTextBuilder) AppendSubstitution(text, alias string) *SSMLTextBuilder {
+func (b *SSMLTextBuilder) AppendSubstitution(text, alias string) *SSMLTextBuilder {
 
-	this.buffer.WriteString(fmt.Sprintf("<sub alias=\"%s\">%s</sub>", alias, text))
+	b.buffer.WriteString(fmt.Sprintf("<sub alias=\"%s\">%s</sub>", alias, text))
 
-	return this
+	return b
 }
 
-func (this *SSMLTextBuilder) AppendBackground(text string, src string, repeat bool) *SSMLTextBuilder {
+func (b *SSMLTextBuilder) AppendBackground(text string, src string, repeat bool) *SSMLTextBuilder {
 	repeatAttr := "yes"
 	if !repeat {
 		repeatAttr = ""
 	}
 
-	this.buffer.WriteString(fmt.Sprintf("<background src=\"%s\" repeat=\"%s\">%s</background>", src, repeatAttr, text))
-	return this
+	b.buffer.WriteString(fmt.Sprintf("<background src=\"%s\" repeat=\"%s\">%s</background>", src, repeatAttr, text))
+	return b
 }
 
-func (this *SSMLTextBuilder) ApplyBackground(src string, repeat bool) *SSMLTextBuilder {
+func (b *SSMLTextBuilder) ApplyBackground(src string, repeat bool) *SSMLTextBuilder {
 	repeatAttr := "yes"
 	if !repeat {
 		repeatAttr = ""
 	}
 
 	buffer := bytes.NewBufferString("")
-	buffer.WriteString(fmt.Sprintf("<background src=\"%s\" repeat=\"%s\">%s</background>", src, repeatAttr, this.buffer.String()))
+	buffer.WriteString(
+		fmt.Sprintf(
+			"<background src=\"%s\" repeat=\"%s\">%s</background>",
+			src,
+			repeatAttr,
+			b.buffer.String(),
+		),
+	)
 
-	this.buffer = buffer
-	return this
+	b.buffer = buffer
+	return b
 }
 
-func (this *SSMLTextBuilder) Build() string {
-	return fmt.Sprintf("<speak>%s</speak>", this.buffer.String())
+func (b *SSMLTextBuilder) Build() string {
+	return fmt.Sprintf("<speak>%s</speak>", b.buffer.String())
 }

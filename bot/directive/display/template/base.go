@@ -21,16 +21,16 @@ type BaseTemplate struct {
 	Title           string `json:"title"`
 }
 
-func (this *BaseTemplate) SetTitle(title string) {
-	this.Title = title
+func (t *BaseTemplate) SetTitle(title string) {
+	t.Title = title
 }
 
-func (this *BaseTemplate) SetBackgroundImageUrl(url string) {
-	this.SetBackgroundImage(NewImage(url))
+func (t *BaseTemplate) SetBackgroundImageUrl(url string) {
+	t.SetBackgroundImage(NewImage(url))
 }
 
-func (this *BaseTemplate) SetBackgroundImage(background *Image) {
-	this.BackgroundImage = background
+func (t *BaseTemplate) SetBackgroundImage(background *Image) {
+	t.BackgroundImage = background
 }
 
 type Image struct {
@@ -45,14 +45,14 @@ func NewImage(url string) *Image {
 	return image
 }
 
-func (this *Image) SetWidth(width int) *Image {
-	this.WidthPixels = width
-	return this
+func (i *Image) SetWidth(width int) *Image {
+	i.WidthPixels = width
+	return i
 }
 
-func (this *Image) SetHeight(height int) *Image {
-	this.HeightPixels = height
-	return this
+func (i *Image) SetHeight(height int) *Image {
+	i.HeightPixels = height
+	return i
 }
 
 type Text struct {

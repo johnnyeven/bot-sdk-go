@@ -20,8 +20,8 @@ func NewIntent(intent data.Intent) *Intent {
 }
 
 // 根据槽位名获取槽位
-func (this *Intent) GetSlot(name string) *data.Slot {
-	slot, ok := this.data.Slots[name]
+func (i *Intent) GetSlot(name string) *data.Slot {
+	slot, ok := i.data.Slots[name]
 	if ok {
 		return &slot
 	}
@@ -29,8 +29,8 @@ func (this *Intent) GetSlot(name string) *data.Slot {
 }
 
 // 根据槽位名获取槽位对应的值
-func (this *Intent) GetSlotValue(name string) string {
-	slot := this.GetSlot(name)
+func (i *Intent) GetSlotValue(name string) string {
+	slot := i.GetSlot(name)
 	if slot != nil {
 		return slot.Value
 	}
@@ -38,8 +38,8 @@ func (this *Intent) GetSlotValue(name string) string {
 }
 
 // 根据槽位名获取槽位对应的状态
-func (this *Intent) GetSlotStatus(name string) string {
-	slot := this.GetSlot(name)
+func (i *Intent) GetSlotStatus(name string) string {
+	slot := i.GetSlot(name)
 	if slot != nil {
 		return slot.ConfirmationStatus
 	}
@@ -48,8 +48,8 @@ func (this *Intent) GetSlotStatus(name string) string {
 }
 
 // 设置槽位的值
-func (this *Intent) SetSlotValue(name string, value string) bool {
-	slot := this.GetSlot(name)
+func (i *Intent) SetSlotValue(name string, value string) bool {
+	slot := i.GetSlot(name)
 	if slot != nil {
 		slot.Value = value
 		return true
@@ -59,6 +59,6 @@ func (this *Intent) SetSlotValue(name string, value string) bool {
 	return false
 }
 
-func (this *Intent) GetData() data.Intent {
-	return this.data
+func (i *Intent) GetData() data.Intent {
+	return i.data
 }

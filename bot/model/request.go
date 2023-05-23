@@ -82,49 +82,49 @@ func (this *VideoPlayerEventRequest) GetOffsetInMilliseconds() int32 {
 }
 
 // 获取意图名
-func (this *IntentRequest) GetIntentName() (string, bool) {
-	return this.Dialog.GetIntentName()
+func (r *IntentRequest) GetIntentName() (string, bool) {
+	return r.Dialog.GetIntentName()
 }
 
 // 槽位填充是否完成
-func (this *IntentRequest) IsDialogStateCompleted() bool {
-	return this.Dialog.DialogState == "COMPLETED"
+func (r *IntentRequest) IsDialogStateCompleted() bool {
+	return r.Dialog.DialogState == "COMPLETED"
 }
 
 // 获取用户请求query
-func (this *IntentRequest) GetQuery() string {
-	query, _ := this.Dialog.GetQuery()
+func (r *IntentRequest) GetQuery() string {
+	query, _ := r.Dialog.GetQuery()
 	return query
 }
 
 // 获取用户id
-func (this *Request) GetUserId() string {
-	return this.Common.Context.System.User.UserId
+func (r *Request) GetUserId() string {
+	return r.Common.Context.System.User.UserId
 }
 
 // 获取设备id
-func (this *Request) GetDeviceId() string {
-	return this.Common.Context.System.Device.DeviceId
+func (r *Request) GetDeviceId() string {
+	return r.Common.Context.System.Device.DeviceId
 }
 
 // 获取音频播放上下文
-func (this *Request) GetAudioPlayerContext() data.AudioPlayerContext {
-	return this.Common.Context.AudioPlayer
+func (r *Request) GetAudioPlayerContext() data.AudioPlayerContext {
+	return r.Common.Context.AudioPlayer
 }
 
 // 获取视频播放上下文
-func (this *Request) GetVideoPlayerContext() data.VideoPlayerContext {
-	return this.Common.Context.VideoPlayer
+func (r *Request) GetVideoPlayerContext() data.VideoPlayerContext {
+	return r.Common.Context.VideoPlayer
 }
 
 // 获取access token
-func (this *Request) GetAccessToken() string {
-	return this.Common.Context.System.User.AccessToken
+func (r *Request) GetAccessToken() string {
+	return r.Common.Context.System.User.AccessToken
 }
 
 // 获取请求的时间戳
-func (this *Request) GetTimestamp() int {
-	i, err := strconv.Atoi(this.Common.Request.Timestamp)
+func (r *Request) GetTimestamp() int {
+	i, err := strconv.Atoi(r.Common.Request.Timestamp)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -132,19 +132,19 @@ func (this *Request) GetTimestamp() int {
 }
 
 // 获取请求id
-func (this *Request) GetRequestId() string {
-	return this.Common.Request.RequestId
+func (r *Request) GetRequestId() string {
+	return r.Common.Request.RequestId
 }
 
 // 获取技能id
-func (this *Request) GetBotId() string {
-	return this.Common.Context.System.Application.ApplicationId
+func (r *Request) GetBotId() string {
+	return r.Common.Context.System.Application.ApplicationId
 }
 
 // 验证请求时间戳合法性
-func (this *Request) VerifyTimestamp() bool {
+func (r *Request) VerifyTimestamp() bool {
 
-	if this.GetTimestamp()+180 > int(time.Now().Unix()) {
+	if r.GetTimestamp()+180 > int(time.Now().Unix()) {
 		return true
 	}
 
@@ -152,12 +152,12 @@ func (this *Request) VerifyTimestamp() bool {
 }
 
 // 获取设备支持的接口类型
-func (this *Request) GetSupportedInterfaces() map[string]interface{} {
-	return this.Common.Context.System.Device.SupportedInterfaces
+func (r *Request) GetSupportedInterfaces() map[string]interface{} {
+	return r.Common.Context.System.Device.SupportedInterfaces
 }
 
-func (this *Request) isSupportInterface(support string) bool {
-	supportedInterfaces := this.GetSupportedInterfaces()
+func (r *Request) isSupportInterface(support string) bool {
+	supportedInterfaces := r.GetSupportedInterfaces()
 	_, ok := supportedInterfaces[support]
 
 	if ok {
@@ -167,23 +167,23 @@ func (this *Request) isSupportInterface(support string) bool {
 }
 
 // 检查是否支持展现
-func (this *Request) IsSupportDisplay() bool {
-	return this.isSupportInterface("Display")
+func (r *Request) IsSupportDisplay() bool {
+	return r.isSupportInterface("Display")
 }
 
 // 检查是否支持音频播放
-func (this *Request) IsSupportAudio() bool {
-	return this.isSupportInterface("AudioPlayer")
+func (r *Request) IsSupportAudio() bool {
+	return r.isSupportInterface("AudioPlayer")
 }
 
 // 检查是否支持视频播放
-func (this *Request) IsSupportVideo() bool {
-	return this.isSupportInterface("VideoPlayer")
+func (r *Request) IsSupportVideo() bool {
+	return r.isSupportInterface("VideoPlayer")
 }
 
 // 验证技能id合法性
-func (this *Request) VerifyBotID(myBotID string) bool {
-	if this.GetBotId() == myBotID {
+func (r *Request) VerifyBotID(myBotID string) bool {
+	if r.GetBotId() == myBotID {
 		return true
 	}
 	return false

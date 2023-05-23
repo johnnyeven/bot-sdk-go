@@ -28,96 +28,96 @@ func NewBot() *Bot {
 }
 
 // 根据每个请求分别处理
-func (this *Bot) Handler(request string) string {
-	this.Request = model.NewRequest(request)
-	this.Session = model.NewSession(model.GetSessionData(request))
-	this.Response = model.NewResponse(this.Session, this.Request)
+func (b *Bot) Handler(request string) string {
+	b.Request = model.NewRequest(request)
+	b.Session = model.NewSession(model.GetSessionData(request))
+	b.Response = model.NewResponse(b.Session, b.Request)
 
-	this.dispatch()
+	b.dispatch()
 
-	return this.Response.Build()
+	return b.Response.Build()
 }
 
 // 添加对intent的处理函数
-func (this *Bot) AddIntentHandler(intentName string, fn func(bot *Bot, request *model.IntentRequest)) {
+func (b *Bot) AddIntentHandler(intentName string, fn func(bot *Bot, request *model.IntentRequest)) {
 	if intentName != "" {
-		this.intentHandler[intentName] = fn
+		b.intentHandler[intentName] = fn
 	}
 }
 
 // 添加对事件的处理函数
-func (this *Bot) AddEventListener(eventName string, fn func(bot *Bot, request interface{})) {
+func (b *Bot) AddEventListener(eventName string, fn func(bot *Bot, request interface{})) {
 	if eventName != "" {
-		this.eventHandler[eventName] = fn
+		b.eventHandler[eventName] = fn
 	}
 }
 
 // 添加事件默认处理函数
 // 比如，在播放视频时，技能会收到各种事件的上报，如果不想一一处理可以使用这个来添加处理
-func (this *Bot) AddDefaultEventListener(fn func(bot *Bot, request interface{})) {
-	this.defaultEventHandler = fn
+func (b *Bot) AddDefaultEventListener(fn func(bot *Bot, request interface{})) {
+	b.defaultEventHandler = fn
 }
 
 // 打开技能时的处理
-func (this *Bot) OnLaunchRequest(fn func(bot *Bot, request *model.LaunchRequest)) {
-	this.launchRequestHandler = fn
+func (b *Bot) OnLaunchRequest(fn func(bot *Bot, request *model.LaunchRequest)) {
+	b.launchRequestHandler = fn
 }
 
 // 技能关闭的处理，比如可以做一些清理的工作
 // TIP: 根据协议，技能关闭返回的结果，DuerOS不会返回给用户。
-func (this *Bot) OnSessionEndedRequest(fn func(bot *Bot, request *model.SessionEndedRequest)) {
-	this.sessionEndedRequestHandler = fn
+func (b *Bot) OnSessionEndedRequest(fn func(bot *Bot, request *model.SessionEndedRequest)) {
+	b.sessionEndedRequestHandler = fn
 }
 
-func (this *Bot) dispatch() {
-	switch request := this.Request.(type) {
+func (b *Bot) dispatch() {
+	switch request := b.Request.(type) {
 	case model.IntentRequest:
-		this.processIntentHandler(request)
+		b.processIntentHandler(request)
 		return
 	case model.LaunchRequest:
-		this.processLaunchHandler(request)
+		b.processLaunchHandler(request)
 		return
 	case model.SessionEndedRequest:
-		this.processSessionEndedHandler(request)
+		b.processSessionEndedHandler(request)
 		return
 	}
-	this.processEventHandler(this.Request)
+	b.processEventHandler(b.Request)
 }
 
-func (this *Bot) processLaunchHandler(request model.LaunchRequest) {
-	if this.launchRequestHandler != nil {
-		this.launchRequestHandler(this, &request)
+func (b *Bot) processLaunchHandler(request model.LaunchRequest) {
+	if b.launchRequestHandler != nil {
+		b.launchRequestHandler(b, &request)
 	}
 }
 
-func (this *Bot) processSessionEndedHandler(request model.SessionEndedRequest) {
-	if this.sessionEndedRequestHandler != nil {
-		this.sessionEndedRequestHandler(this, &request)
+func (b *Bot) processSessionEndedHandler(request model.SessionEndedRequest) {
+	if b.sessionEndedRequestHandler != nil {
+		b.sessionEndedRequestHandler(b, &request)
 	}
 }
 
-func (this *Bot) processIntentHandler(request model.IntentRequest) {
+func (b *Bot) processIntentHandler(request model.IntentRequest) {
 	intentName, _ := request.GetIntentName()
-	fn, ok := this.intentHandler[intentName]
+	fn, ok := b.intentHandler[intentName]
 
 	if ok {
-		fn(this, &request)
+		fn(b, &request)
 		return
 	}
 }
 
-func (this *Bot) processEventHandler(req interface{}) {
+func (b *Bot) processEventHandler(req interface{}) {
 	rVal := reflect.ValueOf(req)
 	eventType := rVal.FieldByName("Type").Interface().(string)
 
-	fn, ok := this.eventHandler[eventType]
+	fn, ok := b.eventHandler[eventType]
 
 	if ok {
-		fn(this, req)
+		fn(b, req)
 		return
 	}
 
-	if this.defaultEventHandler != nil {
-		this.defaultEventHandler(this, req)
+	if b.defaultEventHandler != nil {
+		b.defaultEventHandler(b, req)
 	}
 }

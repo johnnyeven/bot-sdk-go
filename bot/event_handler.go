@@ -7,8 +7,8 @@ import (
 // ListTemplate 列表选择事件
 // Display.ButtonClicked 事件
 // https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/display-template_markdown#Display.ElementSelected%E4%BA%8B%E4%BB%B6
-func (this *Bot) OnDisplayElementSelected(fn func(bot *Bot, request *model.EventRequest)) {
-	this.AddEventListener(
+func (b *Bot) OnDisplayElementSelected(fn func(bot *Bot, request *model.EventRequest)) {
+	b.AddEventListener(
 		"Display.ElementSelected", func(bot *Bot, request interface{}) {
 			req := request.(model.EventRequest)
 			fn(bot, &req)
@@ -29,16 +29,18 @@ func (this *Bot) OnDisplayElementSelected(fn func(bot *Bot, request *model.Event
 
 // LinkAccountSucceeded 事件
 // ```javascript
-//{
-//    "type": "Connections.Response",
-//    "name": "LinkAccountSucceeded",
-//    "requestId": "{{STRING}}",
-//    "timestamp": {{INT32}},
-//    "token": "{{STRING}}"
-//}
+//
+//	{
+//	   "type": "Connections.Response",
+//	   "name": "LinkAccountSucceeded",
+//	   "requestId": "{{STRING}}",
+//	   "timestamp": {{INT32}},
+//	   "token": "{{STRING}}"
+//	}
+//
 // ```
-func (this *Bot) OnLinkAccountSuccessed(fn func(bot *Bot, request *model.EventRequest)) {
-	this.AddEventListener(
+func (b *Bot) OnLinkAccountSuccessed(fn func(bot *Bot, request *model.EventRequest)) {
+	b.AddEventListener(
 		"LinkAccountSucceeded", func(bot *Bot, request interface{}) {
 			req := request.(model.EventRequest)
 			fn(bot, &req)
@@ -48,17 +50,19 @@ func (this *Bot) OnLinkAccountSuccessed(fn func(bot *Bot, request *model.EventRe
 
 // Screen.LinkClicked事件
 // https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/cards_markdown#Screen.LinkClicked%E4%BA%8B%E4%BB%B6
-//{
-//    "type": "Screen.LinkClicked",
-//    "url": "{{STRING}}",
-//    "requestId": "{{STRING}}",
-//    "timestamp": {{INT32}}
-//    "token": "{{STRING}}"
-//}
-func (this *Bot) OnScreenLinkClicked(fn func(bot *Bot, request *model.EventRequest)) {
-	this.AddEventListener(
+//
+//	{
+//	   "type": "Screen.LinkClicked",
+//	   "url": "{{STRING}}",
+//	   "requestId": "{{STRING}}",
+//	   "timestamp": {{INT32}}
+//	   "token": "{{STRING}}"
+//	}
+func (b *Bot) OnScreenLinkClicked(fn func(bot *Bot, request *model.EventRequest)) {
+	b.AddEventListener(
 		"Screen.LinkClicked", func(bot *Bot, request interface{}) {
 			req := request.(model.EventRequest)
 			fn(bot, &req)
-		})
+		},
+	)
 }

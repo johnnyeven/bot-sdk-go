@@ -21,16 +21,16 @@ func NewHint(hint ...string) *Hint {
 	return h
 }
 
-func (this *Hint) SetHints(hints []string) *Hint {
+func (h *Hint) SetHints(hints []string) *Hint {
 	for _, value := range hints {
-		this.AddHint(value)
+		h.AddHint(value)
 	}
 
-	return this
+	return h
 }
 
-func (this *Hint) AddHint(hint string) *Hint {
-	this.Hints = append(this.Hints, util.FormatSpeech(hint))
+func (h *Hint) AddHint(hint string) *Hint {
+	h.Hints = append(h.Hints, util.FormatSpeech(hint))
 
-	return this
+	return h
 }
